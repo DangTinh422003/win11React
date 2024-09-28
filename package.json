@@ -41,7 +41,7 @@
   },
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "install -g vite && vite build",
     "ghbuild": "CI=false vite build",
     "prettier": "prettier --write .",
     "turbuild": "react-scripts build",
