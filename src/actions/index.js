@@ -100,7 +100,7 @@ export const performApp = (act, menu) => {
       var app = Object.keys(apps).filter(
         (x) =>
           apps[x].action == data.type ||
-          (apps[x].payload == data.payload && apps[x].payload != null),
+          (apps[x].payload == data.payload && apps[x].payload != null)
       );
 
       app = apps[app];
@@ -123,7 +123,7 @@ export const delApp = (act, menu) => {
       var app = Object.keys(apps).filter((x) => apps[x].action == data.type);
       if (app) {
         app = apps[app];
-        if (app.pwa == true || app.pwa == False /*what is that for ?*/) {
+        if (app.pwa == true || app.pwa == false /*what is that for ?*/) {
           store.dispatch({ type: app.action, payload: "close" });
           store.dispatch({ type: "DELAPP", payload: app.icon });
 

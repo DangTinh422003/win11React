@@ -281,23 +281,22 @@ const apps = [
     payload: "https://github.com/blueedgetechno/win11React",
   },
   {
-    name: "Unescape",
-    icon: "unescape",
-    type: "action",
-    action: "EXTERNAL",
-    payload: "https://blueedge.me/unescape",
-  },
-  {
     name: "Discord",
     icon: "discord",
     type: "app",
     action: "DISCORD",
   },
+  {
+    name: "Bubble Hub",
+    icon: "bubblehub",
+    type: "app",
+    action: "BUBBLEHUB",
+  },
 ];
 
-for (let i = 0; i < installed.length; i++) {
-  installed[i].action = gene_name();
-  apps.push(installed[i]);
+for (const app of installed) {
+  app.action = gene_name();
+  apps.push(app);
 }
 
 export default apps;

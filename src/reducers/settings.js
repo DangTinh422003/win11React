@@ -1,5 +1,3 @@
-import { desktopApps } from "../utils";
-
 const defState = {
   system: {
     power: {
@@ -17,7 +15,7 @@ const defState = {
     },
   },
   person: {
-    name: "Blue Edge",
+    name: "Admin",
     theme: "light",
     color: "blue",
   },
@@ -56,9 +54,15 @@ const changeVal = (obj, path, val = "togg") => {
 };
 
 const settReducer = (state = defState, action) => {
-  var tmpState = { ...state },
+  let tmpState = { ...state },
     changed = false;
+
   switch (action.type) {
+    case "UPDATE_USER": {
+      changed = true;
+      tmpState.person.name = action.payload;
+      break;
+    }
     case "STNGTHEME":
       changed = true;
       tmpState.person.theme = action.payload;
@@ -75,7 +79,7 @@ const settReducer = (state = defState, action) => {
       changed = true;
       tmpState = { ...action.payload };
       break;
-    case "TOGGAIRPLNMD":
+    case "TOGGAIRPLNMD": {
       changed = true;
       const airPlaneModeStatus = tmpState.network.airplane;
       if (tmpState.network.wifi.state === true && !airPlaneModeStatus) {
@@ -85,6 +89,9 @@ const settReducer = (state = defState, action) => {
         tmpState = changeVal(tmpState, "devices.bluetooth");
       }
       tmpState = changeVal(tmpState, "network.airplane");
+      break;
+    }
+    default:
   }
 
   if (changed) localStorage.setItem("setting", JSON.stringify(tmpState));

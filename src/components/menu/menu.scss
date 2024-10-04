@@ -9,7 +9,6 @@
   z-index: 10000;
   opacity: 1;
   pointer-events: all;
-  // border: solid 1px var(--comp-txt);
   border-radius: 8px;
   transition: opacity 0.1s ease;
 
@@ -18,16 +17,20 @@
     pointer-events: none;
   }
 
-  &[data-left="false"] .minimenu {
-    left: unset;
-    right: 98%;
+  &[data-left="false"] {
+    .minimenu {
+      left: unset;
+      right: 98%;
+    }
   }
 }
 
-body[data-theme="dark"] .actmenu {
-  --bg1: rgba(34, 36, 47, 0.8);
-  --bg1a: rgba(30, 32, 47, 0.9);
-  --bg2: rgba(255, 255, 255, 0.08);
+body[data-theme="dark"] {
+  .actmenu {
+    --bg1: rgba(34, 36, 47, 0.8);
+    --bg1a: rgba(30, 32, 47, 0.9);
+    --bg2: rgba(255, 255, 255, 0.08);
+  }
 }
 
 .minimenu {
@@ -38,9 +41,7 @@ body[data-theme="dark"] .actmenu {
   background: var(--bg1a);
   z-index: 9999;
   padding: 4px 0;
-  // border: solid 1px var(--comp-txt);
   animation: fadein 600ms ease-in-out;
-  // backdrop-filter: saturate(2) blur(20px);
   border-radius: 8px;
 }
 
@@ -57,7 +58,6 @@ body[data-theme="dark"] .actmenu {
   align-items: center;
   font-weight: 500;
   color: var(--txt-col);
-  // transition: all 0.1s ease;
 
   &:hover {
     background: var(--bg2);
@@ -74,16 +74,16 @@ body[data-theme="dark"] .actmenu {
 
   .micon {
     position: absolute;
-  }
 
-  .rightIcon {
-    right: 8px;
-  }
+    &.rightIcon {
+      right: 8px;
+    }
 
-  .dotIcon,
-  .checkIcon {
-    right: 8px;
-    color: var(--med-txt);
+    &.dotIcon,
+    &.checkIcon {
+      right: 8px;
+      color: var(--med-txt);
+    }
   }
 }
 

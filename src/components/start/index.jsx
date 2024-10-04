@@ -44,14 +44,12 @@ export const DesktopApp = () => {
     arr.apps = tmpApps;
     return arr;
   });
-  const dispatch = useDispatch();
 
   return (
     <div className="desktopCont">
       {!deskApps.hide &&
         deskApps.apps.map((app, i) => {
           return (
-            // to allow it to be focusable (:focus)
             <div key={i} className="dskApp" tabIndex={0}>
               <Icon
                 click={app.action}
@@ -150,7 +148,7 @@ export const SidePane = () => {
   function sliderBackground(elem, e) {
     elem.style.setProperty(
       "--track-color",
-      `linear-gradient(90deg, var(--clrPrm) ${e - 3}%, #888888 ${e}%)`,
+      `linear-gradient(90deg, var(--clrPrm) ${e - 3}%, #888888 ${e}%)`
     );
   }
 

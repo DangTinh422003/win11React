@@ -16,7 +16,6 @@ export const EdgeMenu = () => {
     "https://www.youtube.com/embed/m0EHSoZzHEA": "Youtube",
     "https://blueedge.me": "blueedge",
     "https://andrewstech.me": "\nandrewstech",
-    "https://blueedge.me/unescape": "Unescape",
     "https://win11.blueedge.me": "Inception",
     "https://open.spotify.com/embed/user/jhfivkgdtg4s97pwbo1rbvr9v/playlist/6IdR78TOog83PV4XhLDvWN":
       "Spotify",
@@ -31,7 +30,7 @@ export const EdgeMenu = () => {
 
   const isValidURL = (string) => {
     var res = string.match(
-      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g,
+      /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g
     );
     return res !== null;
   };
