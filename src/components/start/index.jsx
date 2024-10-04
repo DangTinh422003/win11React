@@ -45,14 +45,11 @@ export const DesktopApp = () => {
     return arr;
   });
 
-  const dispatch = useDispatch();
-
   return (
     <div className="desktopCont">
       {!deskApps.hide &&
         deskApps.apps.map((app, i) => {
           return (
-            // to allow it to be focusable (:focus)
             <div key={i} className="dskApp" tabIndex={0}>
               <Icon
                 click={app.action}

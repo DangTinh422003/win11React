@@ -287,15 +287,16 @@ const apps = [
     action: "DISCORD",
   },
   {
-    name: "Portfolio",
-    icon: "portfolio",
+    name: "Bubble Hub",
+    icon: "bubblehub",
     type: "app",
+    action: "BUBBLEHUB",
   },
 ];
 
-for (let i = 0; i < installed.length; i++) {
-  installed[i].action = gene_name();
-  apps.push(installed[i]);
+for (const app of installed) {
+  app.action = gene_name();
+  apps.push(app);
 }
 
 export default apps;
