@@ -8,6 +8,7 @@ import {
   web3Accounts,
   web3FromSource,
 } from "@polkadot/extension-dapp";
+import store from "../../reducers";
 
 export const Background = () => {
   const wall = useSelector((state) => state.wallpaper);
@@ -114,7 +115,6 @@ export const LockScreen = (props) => {
   };
 
   const [account, setAccount] = useState(null);
-  console.log("🚀 ~ LockScreen ~ account:", account);
 
   const handleLogin = async () => {
     try {
@@ -144,6 +144,10 @@ export const LockScreen = (props) => {
 
       setAccount(selectedAccount);
       proceed();
+      store.dispatch({
+        type: "UPDATE_USER",
+        payload: selectedAccount.meta.name,
+      });
     } catch (error) {
       console.error("Lỗi khi đăng nhập:", error);
     }
